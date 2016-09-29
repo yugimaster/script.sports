@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.sports"
+	   name="Z9SPORTS"
+	   version="0.0.1"
+	   provider-name="yugimaster">
+	<requires>
+		<import addon="xbmc.python" version="2.14.0"/>
+		<import addon="script.module.pil" version="1.1.7"/>
+		<import addon="script.plugin.cache2"/>
+		<import addon="script.module.simplejson" version="2.0.10"/>
+	</requires>
+	<extension point="xbmc.python.script" library="default.py">
+		<provides>audio video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Z9 SPORTS</summary>
+		<summary lang="zh-CN">Z9 体育</summary>
+		<description lang="en">Z9 SPORTS</description>
+		<description lang="zh-CN">Z9 体育</description>
+		<platform>all</platform>
+	</extension>
+</addon>
