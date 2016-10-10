@@ -7,6 +7,7 @@ from dialogs.DialogBaseInfo import DialogBaseInfo
 from OnClickHandler import OnClickHandler
 from library import LibraryFunctions
 from Utils import *
+from WindowManager import wm
 
 ch = OnClickHandler()
 LIBRARY = LibraryFunctions()
@@ -297,14 +298,7 @@ class MainWin(WindowXML, DialogBaseInfo):
 
     @ch.click(C_LIST_DATE)
     def schedule_list_click(self):
-        lastitem = self.getControl(C_LIST_DATE).getListItem(self.last_pos)
-        lastitem.setProperty("current", "0")
-        self.last_pos = self.getControl(C_LIST_DATE).getSelectedPosition()
-        item = self.getControl(C_LIST_DATE).getSelectedItem()
-        item.setProperty("current", "1")
-        ymd = item.getProperty("ymd")
-        lists = self.init_schedule_list(ymd, ymd)
-        self.set_container(C_LIST_SCHEDULE, lists)
+        wm.open_schedule_detail_window()
 
     @ch.action("back", "*")
     @ch.action("previousmenu", "*")

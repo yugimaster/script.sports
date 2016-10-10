@@ -9,6 +9,7 @@ ADDON_ICON = ADDON.getAddonInfo('icon')
 ADDON_NAME = ADDON.getAddonInfo('name')
 ADDON_PATH = ADDON.getAddonInfo('path').decode("utf-8")
 HOME_XML = "script-Main.xml"
+SCHEDULE_DETAIL_XML = "script-ScheduleDetail.xml"
 
 
 class WindowManager(object):
@@ -38,6 +39,16 @@ class WindowManager(object):
         import MainWindow
         xbmc.executebuiltin("ActivateWindow(busydialog)")
         dialog = MainWindow.MainWin(HOME_XML, ADDON_PATH)
+        xbmc.executebuiltin("Dialog.Close(busydialog)")
+        self.open_dialog(dialog, prev_window)
+
+    def open_schedule_detail_window(self, prev_window=None):
+        """
+        open schedule detail window, deal with window stack
+        """
+        import ScheduleDetailWindow
+        xbmc.executebuiltin("ActivateWindow(busydialog)")
+        dialog = ScheduleDetailWindow.ScheduleDetailWin(SCHEDULE_DETAIL_XML, ADDON_PATH)
         xbmc.executebuiltin("Dialog.Close(busydialog)")
         self.open_dialog(dialog, prev_window)
 

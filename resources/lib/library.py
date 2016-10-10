@@ -110,3 +110,41 @@ class LibraryFunctions():
                     "ymd": SecondtoYMD(time),
                     "current": current_state}
             yield item
+
+    def fetch_time_tab(self, now_time):
+        month_map = {"01": "1",
+                     "02": "2",
+                     "03": "3",
+                     "04": "4",
+                     "05": "5",
+                     "06": "6",
+                     "07": "7",
+                     "08": "8",
+                     "09": "9",
+                     "10": "10",
+                     "11": "11",
+                     "12": "12"}
+        for count in range(-6, 7):
+            time = now_time + 86400 * count
+            month = SecondtoMonth(time)
+            day = SecondtoDay(time)
+            if count == 0:
+                str_date = "今天"
+                current_state = "1"
+            else:
+                str_date = month_map[month] + "月" + day + "日"
+                current_state = "0"
+            len_date = len(str_date)
+            if len_date == 6:
+                texture_url = "detail/2_fo.png"
+            elif len_date == 9:
+                texture_url = "detail/4_fo.png"
+            elif len_date == 10:
+                texture_url = "detail/5_fo.png"
+            else:
+                texture_url = "detail/label_fo.png"
+            item = {"label": str_date.decode('utf8'),
+                    "icon": texture_url,
+                    "ymd": SecondtoYMD(time),
+                    "current": current_state}
+            yield item
