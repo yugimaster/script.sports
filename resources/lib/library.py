@@ -65,8 +65,8 @@ class LibraryFunctions():
             return data
         return None
 
-    def fetch_schedule_list(self, startDate, endDate):
-        data = EPGAPI.get_schedule_list(startDate, endDate)
+    def fetch_schedule_list(self, startDate, endDate, competitionId="22"):
+        data = EPGAPI.get_schedule_list(competitionId, startDate, endDate)
         data = simplejson.loads(data)
         result = None
         if "data" in data:

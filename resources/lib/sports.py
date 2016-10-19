@@ -121,10 +121,10 @@ class EPGAPI(object):
         return GetHttpData(self.API + 'live_details/get_live_schedule?req_from=PVS_APK&site_selector=sports&live_status_filter=1,2,3&pay_selector=0,1&format=json&start_time={0}&end_time={1}'.format(start, end) + self.QUA)
 
     @classmethod  # schedule
-    def get_schedule_list(self, startDate, endDate):
+    def get_schedule_list(self, competitionId, startDate, endDate):
         """get schedule list
         """
-        return GetHttpData(self.API + 'match/get_match_list?competitionId=22&startTime={0}&endTime={1}&version=1&format=json&licence={2}'.format(startDate, endDate, self.LICENSE))
+        return GetHttpData(self.API + 'match/get_match_list?competitionId={0}&startTime={1}&endTime={2}&version=1&format=json&licence={3}'.format(competitionId, startDate, endDate, self.LICENSE))
 
     def _get(self, API, **param):
         data = QueryParams(API, **param)

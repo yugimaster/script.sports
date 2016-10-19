@@ -10,6 +10,7 @@ ADDON_NAME = ADDON.getAddonInfo('name')
 ADDON_PATH = ADDON.getAddonInfo('path').decode("utf-8")
 HOME_XML = "script-Main.xml"
 SCHEDULE_DETAIL_XML = "script-ScheduleDetail.xml"
+MATCH_SCHEDULE_XML = "script-MatchSchedule.xml"
 
 
 class WindowManager(object):
@@ -49,6 +50,16 @@ class WindowManager(object):
         import ScheduleDetailWindow
         xbmc.executebuiltin("ActivateWindow(busydialog)")
         dialog = ScheduleDetailWindow.ScheduleDetailWin(SCHEDULE_DETAIL_XML, ADDON_PATH)
+        xbmc.executebuiltin("Dialog.Close(busydialog)")
+        self.open_dialog(dialog, prev_window)
+
+    def open_match_schedule_window(self, name, channel, competitionId, prev_window=None):
+        """
+        open match schedule window, deal with window stack
+        """
+        import MatchScheduleWindow
+        xbmc.executebuiltin("ActivateWindow(busydialog)")
+        dialog = MatchScheduleWindow.MatchScheduleWin(MATCH_SCHEDULE_XML, ADDON_PATH, name=name, channel=channel, competitionId=competitionId)
         xbmc.executebuiltin("Dialog.Close(busydialog)")
         self.open_dialog(dialog, prev_window)
 

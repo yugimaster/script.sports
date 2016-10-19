@@ -83,149 +83,170 @@ class MainWin(WindowXML, DialogBaseInfo):
             "label": u"西 甲",
             "image": "home/relate_list/LaLiga.png",
             "icon": "home/relate_list/LaLiga_fo.png",
-            "name": "laliga"
+            "name": "laliga",
+            "competitionId": "0"
         }
         yield item
         item = {
             "label": u"英 超",
             "image": "home/relate_list/PL.png",
             "icon": "home/relate_list/PL_fo.png",
-            "name": "premier_league"
+            "name": "pl",
+            "competitionId": "8"
         }
         yield item
         item = {
-            "label": u"足球新闻",
+            "label": u"栏目",
             "image": "home/relate_list/FN.png",
             "icon": "home/relate_list/FN_fo.png",
-            "name": "football_news"
+            "name": "column",
+            "competitionId": "0"
         }
         yield item
         item = {
             "label": "WWE",
             "image": "home/relate_list/WWE.png",
             "icon": "home/relate_list/WWE_fo.png",
-            "name": "wwe"
+            "name": "wwe",
+            "competitionId": "0"
         }
         yield item
         item = {
             "label": "UFC",
             "image": "home/relate_list/UFC.png",
             "icon": "home/relate_list/UFC_fo.png",
-            "name": "ufc"
+            "name": "ufc",
+            "competitionId": "0"
         }
         yield item
         item = {
-            "label": u"江苏苏宁",
+            "label": u"苏宁专区",
             "image": "home/relate_list/SN.png",
             "icon": "home/relate_list/SN_fo.png",
-            "name": "suning"
+            "name": "suning",
+            "competitionId": "0"
         }
         yield item
         item = {
-            "label": u"国际米兰",
+            "label": u"国米专区",
             "image": "home/relate_list/IM.png",
             "icon": "home/relate_list/IM_fo.png",
-            "name": " internazionale_milano"
+            "name": "im",
+            "competitionId": "0"
         }
         yield item
 
     def init_sport_match(self):
         item = {
-            "label": u"中足协",
+            "label": u"中国之队",
             "image": "home/sport_match/CFA.png",
             "icon": "home/sport_match/CFA_fo.png",
-            "name": "cfa"
+            "name": "cfa",
+            "competitionId": "0"
         }
         yield item
         item = {
             "label": u"欧 冠",
             "image": "home/sport_match/UEFA.png",
             "icon": "home/sport_match/UEFA_fo.png",
-            "name": "uefa"
+            "name": "uefa",
+            "competitionId": "5"
         }
         yield item
         item = {
             "label": u"德 甲",
             "image": "home/sport_match/Bundesliga.png",
             "icon": "home/sport_match/Bundesliga_fo.png",
-            "name": "bundesliga"
+            "name": "bu",
+            "competitionId": "22"
         }
         yield item
         item = {
             "label": u"亚 冠",
             "image": "home/sport_match/AFC.png",
             "icon": "home/sport_match/AFC_fo.png",
-            "name": "afc"
+            "name": "afc",
+            "competitionId": "0"
         }
         yield item
         item = {
-            "label": u"中足协杯",
+            "label": u"足协杯",
             "image": "home/sport_match/CFA-CUP.png",
             "icon": "home/sport_match/CFA-CUP_fo.png",
-            "name": "cfa-cup"
+            "name": "cfacup",
+            "competitionId": "0"
         }
         yield item
         item = {
             "label": u"荷 甲",
             "image": "home/sport_match/Eredivisie.png",
             "icon": "home/sport_match/Eredivisie_fo.png",
-            "name": "eredivisie"
+            "name": "ere",
+            "competitionId": "0"
         }
         yield item
         item = {
-            "label": u"美洲联赛",
+            "label": u"俄 超",
             "image": "home/sport_match/2001.png",
             "icon": "home/sport_match/2001_fo.png",
-            "name": "2001"
+            "name": "po",
+            "competitionId": "0"
         }
         yield item
         item = {
             "label": "NFL",
             "image": "home/sport_match/NFL.png",
             "icon": "home/sport_match/NFL_fo.png",
-            "name": "nfl"
+            "name": "nfl",
+            "competitionId": "0"
         }
         yield item
         item = {
             "label": u"中 超",
             "image": "home/sport_match/CSL.png",
             "icon": "home/sport_match/CSL_fo.png",
-            "name": "csl"
+            "name": "csl",
+            "competitionId": "0"
         }
         yield item
         item = {
             "label": "CBA",
             "image": "home/sport_match/CBA.png",
             "icon": "home/sport_match/CBA_fo.png",
-            "name": "cba"
+            "name": "cba",
+            "competitionId": "100008"
         }
         yield item
         item = {
-            "label": "CBS",
+            "label": u"巴 甲",
             "image": "home/sport_match/CBS.png",
             "icon": "home/sport_match/CBS_fo.png",
-            "name": "cbs"
+            "name": "cbs",
+            "competitionId": "0"
         }
         yield item
         item = {
             "label": "FA CUP",
             "image": "home/sport_match/FACUP.png",
             "icon": "home/sport_match/FACUP_fo.png",
-            "name": "facup"
+            "name": "facup",
+            "competitionId": "0"
         }
         yield item
         item = {
-            "label": "COPA",
+            "label": u"解放者杯",
             "image": "home/sport_match/COPA.png",
             "icon": "home/sport_match/COPA_fo.png",
-            "name": "copa"
+            "name": "copa",
+            "competitionId": "0"
         }
         yield item
         item = {
             "label": u"更 多",
             "image": "home/sport_match/more.png",
             "icon": "home/sport_match/more_fo.png",
-            "name": "more"
+            "name": "more",
+            "competitionId": "more"
         }
         yield item
 
@@ -299,6 +320,15 @@ class MainWin(WindowXML, DialogBaseInfo):
     @ch.click(C_LIST_DATE)
     def schedule_list_click(self):
         wm.open_schedule_detail_window()
+
+    @ch.click([C_LIST_RELATE, C_LIST_MATCH])
+    def open_match_window(self):
+        control_id = self.getFocusId()
+        item = self.getControl(control_id).getSelectedItem()
+        competitionId = item.getProperty("competitionId")
+        match_name = item.getProperty("label")
+        channel = item.getProperty("name")
+        wm.open_match_schedule_window(match_name.replace(" ", ""), channel, competitionId)
 
     @ch.action("back", "*")
     @ch.action("previousmenu", "*")

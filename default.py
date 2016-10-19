@@ -25,6 +25,7 @@ class Main:
         MyFont.addFont("font_sport26", "msyh.ttf", "26")
         MyFont.addFont("font_sport30", "msyh.ttf", "30")
         MyFont.addFont("font_sport32", "msyh.ttf", "32")
+        MyFont.addFont("font_sportbd24", "msyhbd.ttf", "24")
         MyFont.addFont("font_sportbd30", "msyhbd.ttf", "30")
         MyFont.addFont("font_sportbd33", "msyhbd.ttf", "33")
         MyFont.addFont("font_sportbd36", "msyhbd.ttf", "36")
