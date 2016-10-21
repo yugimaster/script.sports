@@ -7,6 +7,7 @@ from dialogs.DialogBaseInfo import DialogBaseInfo
 from OnClickHandler import OnClickHandler
 from library import LibraryFunctions
 from Utils import *
+from WindowManager import wm
 
 ch = OnClickHandler()
 LIBRARY = LibraryFunctions()
@@ -195,6 +196,10 @@ class MatchScheduleWin(WindowXML, DialogBaseInfo):
         ymd = item.getProperty("ymd")
         lists = self.init_schedule_list(ymd, ymd)
         self.set_container(C_LIST_SCHEDULE, lists)
+
+    @ch.action("contextmenu", "*")
+    def open_filter_dialog(self):
+        wm.show_match_filter_dialog()
 
     @ch.action("back", "*")
     @ch.action("previousmenu", "*")

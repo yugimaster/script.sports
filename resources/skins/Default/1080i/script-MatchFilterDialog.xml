@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">noop</defaultcontrol>
+    <zorder>2</zorder>
+    <controls>
+        <control type="image">
+            <width>1920</width>
+            <height>1080</height>
+            <texture>dialogs/match_filter/bg.png</texture>
+        </control>
+        <control type="group">
+            <description>Hidden keyboard buttons</description>
+            <control type="button" id="201">
+                <left>-300</left>
+                <top>-300</top>
+                <width>1</width>
+                <height>1</height>
+                <onright>202</onright>
+                <texturefocus>noop</texturefocus>
+                <texturenofocus>noop</texturenofocus>
+            </control>
+            <control type="button" id="202">
+                <left>-300</left>
+                <top>-300</top>
+                <width>1</width>
+                <height>1</height>
+                <onleft>201</onleft>
+                <onright>noop</onright>
+                <texturefocus>noop</texturefocus>
+                <texturenofocus>noop</texturenofocus>
+            </control>
+            <control type="button" id="203">
+                <left>-300</left>
+                <top>-300</top>
+                <width>1</width>
+                <height>1</height>
+                <texturefocus>noop</texturefocus>
+                <texturenofocus>noop</texturenofocus>
+            </control>
+            <control type="button" id="204">
+                <left>-300</left>
+                <top>-300</top>
+                <width>1</width>
+                <height>1</height>
+                <texturefocus>noop</texturefocus>
+                <texturenofocus>noop</texturenofocus>
+            </control>
+        </control>
+        <control type="label">
+            <left>138</left>
+            <top>113</top>
+            <width>96</width>
+            <height>96</height>
+            <font>font_sportbd48</font>
+            <label>筛选</label>
+        </control>
+        <control type="group">
+            <description>Season</description>
+            <left>267</left>
+            <top>234</top>
+            <control type="label">
+                <top>42</top>
+                <width>84</width>
+                <height>42</height>
+                <font>font_sportbd42</font>
+                <textcolor>B2FFFFFF</textcolor>
+                <label>赛季</label>
+            </control>
+            <control type="image">
+                <left>231</left>
+                <width>339</width>
+                <height>140</height>
+                <aspectratio scalediffuse="false" align="right">scale</aspectratio>
+                <texture colordiffuse="1AFFFFFF">dialogs/match_filter/item_nf.png</texture>
+                <visible>!Control.HasFocus(21)</visible>
+            </control>
+            <control type="list" id="21">
+                <left>231</left>
+                <width>1652</width>
+                <height>193</height>
+                <onup>noop</onup>
+                <ondown>22</ondown>
+                <onleft>noop</onleft>
+                <onright>noop</onright>
+                <pagecontrol>noop</pagecontrol>
+                <scrolltime tween="sine">300</scrolltime>
+                <orientation>horizontal</orientation>
+                <itemlayout width="282" height="193">
+                    <control type="group">
+                        <description>First Item</description>
+                        <left>-28</left>
+                        <visible>StringCompare(ListItem.Property(index),0)</visible>
+                        <control type="image">
+                            <width>367</width>
+                            <height>140</height>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture colordiffuse="1AFFFFFF">$INFO[ListItem.Icon]</texture>
+                            <visible>Control.HasFocus(21)</visible>
+                        </control>
+                        <control type="label">
+                            <left>160</left>
+                            <width>367</width>
+                            <height>140</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>font_sportbd32</font>
+                            <textcolor>4DFFFFFF</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <description>Other Item</description>
+                        <left>23</left>
+                        <visible>!StringCompare(ListItem.Property(index),0)</visible>
+                        <control type="image">
+                            <width>317</width>
+                            <height>140</height>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture>$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="label">
+                            <left>160</left>
+                            <width>367</width>
+                            <height>140</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>font_sportbd32</font>
+                            <textcolor>4DFFFFFF</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="282" height="193">
+                    <control type="group">
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" start="100" end="131" center="auto" easing="out" tween="cubic" time="300" />
+                        </animation>
+                        <animation type="UnFocus" reversible="false">
+                            <effect type="zoom" start="131" end="100" center="auto" easing="out" tween="cubic" time="300" />
+                        </animation>
+                        <control type="group">
+                            <description>First Item Focused</description>
+                            <left>-63</left>
+                            <top>-24</top>
+                            <visible>Stringcompare(ListItem.Property(index),0)</visible>
+                            <control type="image">
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <aspectratio scalediffuse="false">keep</aspectratio>
+                                <texture colordiffuse="1AFFFFFF">$INFO[ListItem.Icon]</texture>
+                                <visible>Control.HasFocus(21)</visible>
+                            </control>
+                            <control type="image">
+                                <width>437</width>
+                                <height>193</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture>dialogs/match_filter/item_fo.png</texture>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="0" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="0" time="300" />
+                                </animation>
+                            </control>
+                            <control type="label">
+                                <left>195</left>
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <font>font_sportbd32</font>
+                                <label>$INFO[ListItem.Label]</label>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="30" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="30" time="300" />
+                                </animation>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <description>Other Item Focused</description>
+                            <left>-12</left>
+                            <top>-24</top>
+                            <visible>!StringCompare(ListItem.Property(index),0)</visible>
+                            <control type="image">
+                                <left>35</left>
+                                <top>24</top>
+                                <width>317</width>
+                                <height>140</height>
+                                <aspectratio scalediffuse="false">keep</aspectratio>
+                                <texture>$INFO[ListItem.Icon]</texture>
+                            </control>
+                            <control type="image">
+                                <width>437</width>
+                                <height>193</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture>dialogs/match_filter/item_fo.png</texture>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="0" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="0" time="300" />
+                                </animation>
+                            </control>
+                            <control type="label">
+                                <left>195</left>
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <font>font_sportbd32</font>
+                                <label>$INFO[ListItem.Label]</label>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="30" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="30" time="300" />
+                                </animation>
+                            </control>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+        <control type="group">
+            <description>Format</description>
+            <left>267</left>
+            <top>384</top>
+            <control type="label">
+                <top>42</top>
+                <width>84</width>
+                <height>42</height>
+                <font>font_sportbd42</font>
+                <textcolor>B2FFFFFF</textcolor>
+                <label>赛制</label>
+            </control>
+            <control type="image">
+                <left>231</left>
+                <width>339</width>
+                <height>140</height>
+                <aspectratio scalediffuse="false" align="right">scale</aspectratio>
+                <texture colordiffuse="1AFFFFFF">dialogs/match_filter/item_nf.png</texture>
+                <visible>!Control.HasFocus(22)</visible>
+            </control>
+            <control type="list" id="22">
+                <left>231</left>
+                <width>1652</width>
+                <height>193</height>
+                <onup>21</onup>
+                <ondown>23</ondown>
+                <onleft>noop</onleft>
+                <onright>noop</onright>
+                <pagecontrol>noop</pagecontrol>
+                <scrolltime tween="sine">300</scrolltime>
+                <orientation>horizontal</orientation>
+                <itemlayout width="282" height="193">
+                    <control type="group">
+                        <description>First Item</description>
+                        <left>-28</left>
+                        <visible>StringCompare(ListItem.Property(index),0)</visible>
+                        <control type="image">
+                            <width>367</width>
+                            <height>140</height>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture colordiffuse="1AFFFFFF">$INFO[ListItem.Icon]</texture>
+                            <visible>Control.HasFocus(22)</visible>
+                        </control>
+                        <control type="label">
+                            <left>160</left>
+                            <width>367</width>
+                            <height>140</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>font_sportbd32</font>
+                            <textcolor>4D007EFF</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <description>Other Item</description>
+                        <left>23</left>
+                        <visible>!StringCompare(ListItem.Property(index),0)</visible>
+                        <control type="image">
+                            <width>317</width>
+                            <height>140</height>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture>$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="label">
+                            <left>160</left>
+                            <width>367</width>
+                            <height>140</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>font_sportbd32</font>
+                            <textcolor>4D007EFF</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="282" height="193">
+                    <control type="group">
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" start="100" end="131" center="auto" easing="out" tween="cubic" time="300" />
+                        </animation>
+                        <animation type="UnFocus" reversible="false">
+                            <effect type="zoom" start="131" end="100" center="auto" easing="out" tween="cubic" time="300" />
+                        </animation>
+                        <control type="group">
+                            <description>First Item Focused</description>
+                            <left>-63</left>
+                            <top>-24</top>
+                            <visible>Stringcompare(ListItem.Property(index),0)</visible>
+                            <control type="image">
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <aspectratio scalediffuse="false">keep</aspectratio>
+                                <texture colordiffuse="1AFFFFFF">$INFO[ListItem.Icon]</texture>
+                                <visible>Control.HasFocus(22)</visible>
+                            </control>
+                            <control type="image">
+                                <width>437</width>
+                                <height>193</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture>dialogs/match_filter/item_fo.png</texture>
+                                <visible>Control.HasFocus(22)</visible>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="0" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="0" time="300" />
+                                </animation>
+                                <animation effect="fade" time="300">Hidden</animation>
+                            </control>
+                            <control type="label">
+                                <left>195</left>
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <font>font_sportbd32</font>
+                                <label>$INFO[ListItem.Label]</label>
+                                <textcolor>4D007EFF</textcolor>
+                                <visible>!Control.HasFocus(22)</visible>
+                            </control>
+                            <control type="label">
+                                <left>195</left>
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <font>font_sportbd32</font>
+                                <label>$INFO[ListItem.Label]</label>
+                                <textcolor>FF007EFF</textcolor>
+                                <visible>Control.HasFocus(22)</visible>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="30" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="30" time="300" />
+                                </animation>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <description>Other Item Focused</description>
+                            <left>-12</left>
+                            <top>-24</top>
+                            <visible>!StringCompare(ListItem.Property(index),0)</visible>
+                            <control type="image">
+                                <left>35</left>
+                                <top>24</top>
+                                <width>317</width>
+                                <height>140</height>
+                                <aspectratio scalediffuse="false">keep</aspectratio>
+                                <texture>$INFO[ListItem.Icon]</texture>
+                            </control>
+                            <control type="image">
+                                <width>437</width>
+                                <height>193</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture>dialogs/match_filter/item_fo.png</texture>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="0" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="0" time="300" />
+                                </animation>
+                            </control>
+                            <control type="label">
+                                <left>195</left>
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <font>font_sportbd32</font>
+                                <label>$INFO[ListItem.Label]</label>
+                                <textcolor>FF007EFF</textcolor>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="30" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="30" time="300" />
+                                </animation>
+                            </control>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+        <control type="group">
+            <description>Format</description>
+            <left>267</left>
+            <top>534</top>
+            <control type="label">
+                <top>42</top>
+                <width>84</width>
+                <height>42</height>
+                <font>font_sportbd42</font>
+                <textcolor>B2FFFFFF</textcolor>
+                <label>轮次</label>
+            </control>
+            <control type="image">
+                <left>231</left>
+                <width>339</width>
+                <height>140</height>
+                <aspectratio scalediffuse="false" align="right">scale</aspectratio>
+                <texture colordiffuse="1AFFFFFF">dialogs/match_filter/item_nf.png</texture>
+                <visible>!Control.HasFocus(23)</visible>
+            </control>
+            <control type="list" id="23">
+                <left>231</left>
+                <width>1652</width>
+                <height>193</height>
+                <onup>22</onup>
+                <ondown>noop</ondown>
+                <onleft>noop</onleft>
+                <onright>noop</onright>
+                <pagecontrol>noop</pagecontrol>
+                <scrolltime tween="sine">300</scrolltime>
+                <orientation>horizontal</orientation>
+                <itemlayout width="282" height="193">
+                    <control type="group">
+                        <description>First Item</description>
+                        <left>-28</left>
+                        <visible>StringCompare(ListItem.Property(index),0)</visible>
+                        <control type="image">
+                            <width>367</width>
+                            <height>140</height>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture colordiffuse="1AFFFFFF">$INFO[ListItem.Icon]</texture>
+                            <visible>Control.HasFocus(23)</visible>
+                        </control>
+                        <control type="label">
+                            <left>160</left>
+                            <width>367</width>
+                            <height>140</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>font_sportbd32</font>
+                            <textcolor>4D007EFF</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <description>Other Item</description>
+                        <left>23</left>
+                        <visible>!StringCompare(ListItem.Property(index),0)</visible>
+                        <control type="image">
+                            <width>317</width>
+                            <height>140</height>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture>$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="label">
+                            <left>160</left>
+                            <width>367</width>
+                            <height>140</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>font_sportbd32</font>
+                            <textcolor>4D007EFF</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="282" height="193">
+                    <control type="group">
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" start="100" end="131" center="auto" easing="out" tween="cubic" time="300" />
+                        </animation>
+                        <animation type="UnFocus" reversible="false">
+                            <effect type="zoom" start="131" end="100" center="auto" easing="out" tween="cubic" time="300" />
+                        </animation>
+                        <control type="group">
+                            <description>First Item Focused</description>
+                            <left>-63</left>
+                            <top>-24</top>
+                            <visible>Stringcompare(ListItem.Property(index),0)</visible>
+                            <control type="image">
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <aspectratio scalediffuse="false">keep</aspectratio>
+                                <texture colordiffuse="1AFFFFFF">$INFO[ListItem.Icon]</texture>
+                                <visible>Control.HasFocus(23)</visible>
+                            </control>
+                            <control type="image">
+                                <width>437</width>
+                                <height>193</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture>dialogs/match_filter/item_fo.png</texture>
+                                <visible>Control.HasFocus(23)</visible>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="0" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="0" time="300" />
+                                </animation>
+                                <animation effect="fade" time="300">Hidden</animation>
+                            </control>
+                            <control type="label">
+                                <left>195</left>
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <font>font_sportbd32</font>
+                                <label>$INFO[ListItem.Label]</label>
+                                <textcolor>4D007EFF</textcolor>
+                                <visible>!Control.HasFocus(23)</visible>
+                            </control>
+                            <control type="label">
+                                <left>195</left>
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <font>font_sportbd32</font>
+                                <label>$INFO[ListItem.Label]</label>
+                                <textcolor>FF007EFF</textcolor>
+                                <visible>Control.HasFocus(23)</visible>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="30" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="30" time="300" />
+                                </animation>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <description>Other Item Focused</description>
+                            <left>-12</left>
+                            <top>-24</top>
+                            <visible>!StringCompare(ListItem.Property(index),0)</visible>
+                            <control type="image">
+                                <left>35</left>
+                                <top>24</top>
+                                <width>317</width>
+                                <height>140</height>
+                                <aspectratio scalediffuse="false">keep</aspectratio>
+                                <texture>$INFO[ListItem.Icon]</texture>
+                            </control>
+                            <control type="image">
+                                <width>437</width>
+                                <height>193</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture>dialogs/match_filter/item_fo.png</texture>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="0" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="0" time="300" />
+                                </animation>
+                            </control>
+                            <control type="label">
+                                <left>195</left>
+                                <top>24</top>
+                                <width>367</width>
+                                <height>140</height>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <font>font_sportbd32</font>
+                                <label>$INFO[ListItem.Label]</label>
+                                <textcolor>FF007EFF</textcolor>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="30" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="30" time="300" />
+                                </animation>
+                            </control>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+    </controls>
+</window>

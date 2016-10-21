@@ -27,9 +27,11 @@ class Main:
         MyFont.addFont("font_sport32", "msyh.ttf", "32")
         MyFont.addFont("font_sportbd24", "msyhbd.ttf", "24")
         MyFont.addFont("font_sportbd30", "msyhbd.ttf", "30")
+        MyFont.addFont("font_sportbd32", "msyhbd.ttf", "32")
         MyFont.addFont("font_sportbd33", "msyhbd.ttf", "33")
         MyFont.addFont("font_sportbd36", "msyhbd.ttf", "36")
         MyFont.addFont("font_sportbd40", "msyhbd.ttf", "40")
+        MyFont.addFont("font_sportbd42", "msyhbd.ttf", "42")
         MyFont.addFont("font_sportbd48", "msyhbd.ttf", "48")
         wm.open_main_window()
 
