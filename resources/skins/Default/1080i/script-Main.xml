@@ -270,25 +270,39 @@
                             <scrolltime tween="sine">300</scrolltime>
                             <orientation>vertical</orientation>
                             <itemlayout width="568" height="79">
-                                <control type="label">
+                                <control type="group">
                                     <left>55</left>
-                                    <width>110</width>
-                                    <height>79</height>
-                                    <textcolor>4DFFFFFF</textcolor>
-                                    <align>center</align>
-                                    <aligny>center</aligny>
-                                    <font>font_sport30</font>
-                                    <label>回看</label>
+                                    <visible>!Stringcompare(ListItem.Property(cid),more)</visible>
+                                    <control type="label">
+                                        <width>110</width>
+                                        <height>79</height>
+                                        <textcolor>4DFFFFFF</textcolor>
+                                        <align>center</align>
+                                        <aligny>center</aligny>
+                                        <font>font_sport30</font>
+                                        <label>回看</label>
+                                    </control>
+                                    <control type="label">
+                                        <left>267</left>
+                                        <width>447</width>
+                                        <height>79</height>
+                                        <textcolor>4DFFFFFF</textcolor>
+                                        <align>center</align>
+                                        <aligny>center</aligny>
+                                        <font>font_sport30</font>
+                                        <label>$INFO[ListItem.Label]</label>
+                                    </control>
                                 </control>
                                 <control type="label">
-                                    <left>322</left>
-                                    <width>447</width>
+                                    <left>284</left>
+                                    <width>568</width>
                                     <height>79</height>
                                     <textcolor>4DFFFFFF</textcolor>
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <font>font_sport30</font>
                                     <label>$INFO[ListItem.Label]</label>
+                                    <visible>Stringcompare(ListItem.Property(cid),more)</visible>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="568" height="79">
@@ -306,11 +320,47 @@
                                             <height>80</height>
                                             <texture>home/review_list_fo.png</texture>
                                         </control>
+                                        <control type="group">
+                                            <visible>!Stringcompare(ListItem.Property(cid),more)</visible>
+                                            <control type="label">
+                                                <left>55</left>
+                                                <width>110</width>
+                                                <height>79</height>
+                                                <textcolor>FFFFFFFF</textcolor>
+                                                <align>center</align>
+                                                <aligny>center</aligny>
+                                                <font>font_sport30</font>
+                                                <label>回看</label>
+                                            </control>
+                                            <control type="label">
+                                                <left>322</left>
+                                                <width>447</width>
+                                                <height>79</height>
+                                                <textcolor>FFFFFFFF</textcolor>
+                                                <align>center</align>
+                                                <aligny>center</aligny>
+                                                <font>font_sport30</font>
+                                                <label>$INFO[ListItem.Label]</label>
+                                            </control>
+                                        </control>
+                                        <control type="label">
+                                            <left>284</left>
+                                            <width>568</width>
+                                            <height>79</height>
+                                            <align>center</align>
+                                            <aligny>center</aligny>
+                                            <font>font_sport30</font>
+                                            <label>$INFO[ListItem.Label]</label>
+                                            <visible>Stringcompare(ListItem.Property(cid),more)</visible>
+                                        </control>
+                                    </control>
+                                    <control type="group">
+                                        <visible>!Control.HasFocus(9001) + !Stringcompare(ListItem.Property(cid),more)</visible>
                                         <control type="label">
                                             <left>55</left>
                                             <width>110</width>
                                             <height>79</height>
-                                            <textcolor>FFFFFFFF</textcolor>
+                                            <textcolor>4DFFFFFF</textcolor>
                                             <align>center</align>
                                             <aligny>center</aligny>
                                             <font>font_sport30</font>
@@ -320,35 +370,23 @@
                                             <left>322</left>
                                             <width>447</width>
                                             <height>79</height>
-                                            <textcolor>FFFFFFFF</textcolor>
+                                            <textcolor>4DFFFFFF</textcolor>
                                             <align>center</align>
                                             <aligny>center</aligny>
                                             <font>font_sport30</font>
                                             <label>$INFO[ListItem.Label]</label>
                                         </control>
                                     </control>
-                                    <control type="group">
-                                        <visible>!Control.HasFocus(9001)</visible>
-                                        <control type="label">
-                                            <left>55</left>
-                                            <width>110</width>
-                                            <height>79</height>
-                                            <textcolor>4DFFFFFF</textcolor>
-                                            <align>center</align>
-                                            <aligny>center</aligny>
-                                            <font>font_sport30</font>
-                                            <label>回看</label>
-                                        </control>
-                                        <control type="label">
-                                            <left>322</left>
-                                            <width>447</width>
-                                            <height>79</height>
-                                            <textcolor>4DFFFFFF</textcolor>
-                                            <align>center</align>
-                                            <aligny>center</aligny>
-                                            <font>font_sport30</font>
-                                            <label>$INFO[ListItem.Label]</label>
-                                        </control>
+                                    <control type="label">
+                                        <left>284</left>
+                                        <width>568</width>
+                                        <height>79</height>
+                                        <textcolor>4DFFFFFF</textcolor>
+                                        <align>center</align>
+                                        <aligny>center</aligny>
+                                        <font>font_sport30</font>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <visible>!Control.HasFocus(9001) + Stringcompare(ListItem.Property(cid),more)</visible>
                                     </control>
                                 </control>
                             </focusedlayout>

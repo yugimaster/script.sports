@@ -58,7 +58,16 @@ class MainWin(WindowXML, DialogBaseInfo):
             recommend_list_three = lists[5:6]
             self.set_container(C_LIST_RECOMMEND_THREE, recommend_list_three)
             if total > 6:
-                review_list = lists[6:]
+                review_list = lists[6:9]
+                listitem = {'Label': u"更多赛事 >",
+                            'Title': u"更多赛事 >",
+                            'icon': "",
+                            'fanart': "",
+                            'image_s': "",
+                            'type': "",
+                            'position': str(len(review_list) + 1),
+                            'cid': "more"}
+                review_list.append(listitem)
                 self.set_container(C_LIST_REVIEW, review_list)
 
     def set_relate_list(self):
@@ -319,7 +328,7 @@ class MainWin(WindowXML, DialogBaseInfo):
 
     @ch.click(C_LIST_DATE)
     def schedule_list_click(self):
-        wm.open_schedule_detail_window()
+        wm.open_match_schedule_time_window()
 
     @ch.click([C_LIST_RELATE, C_LIST_MATCH])
     def open_match_window(self):
@@ -329,6 +338,13 @@ class MainWin(WindowXML, DialogBaseInfo):
         match_name = item.getProperty("label")
         channel = item.getProperty("name")
         wm.open_match_schedule_window(match_name.replace(" ", ""), channel, competitionId)
+
+    @ch.click(C_LIST_REVIEW)
+    def recommend_list_click(self):
+        item = self.getControl(C_LIST_REVIEW).getSelectedItem()
+        cid = item.getProperty("cid")
+        if cid == "more":
+            wm.open_match_schedule_time_window()
 
     @ch.action("back", "*")
     @ch.action("previousmenu", "*")

@@ -148,3 +148,33 @@ class LibraryFunctions():
                     "ymd": SecondtoYMD(time),
                     "current": current_state}
             yield item
+
+    def fetch_match_time(self, now_time):
+        weekday_map = {"1": "（星期一）",
+                       "2": "（星期二）",
+                       "3": "（星期三）",
+                       "4": "（星期四）",
+                       "5": "（星期五）",
+                       "6": "（星期六）",
+                       "0": "（星期日）"}
+        for count in range(-6, 7):
+            time = now_time + 86400 * count
+            ymd = SecondtoYMD(time)
+            md = ymd[5:7] + "." + ymd[8:10]
+            weekday = SecondtoWeekday(time)
+            if count == 0:
+                str_weekday = "（今天）"
+                current_state = "1"
+            elif count == -1:
+                str_weekday = "（昨天）"
+                current_state = "0"
+            elif count == 1:
+                str_weekday = "（明天）"
+                current_state = "0"
+            else:
+                str_weekday = weekday_map[weekday]
+                current_state = "0"
+            item = {"label": (md + str_weekday).decode('utf8'),
+                    "ymd": SecondtoYMD(time),
+                    "current": current_state}
+            yield item
