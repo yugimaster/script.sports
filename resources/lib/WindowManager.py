@@ -9,6 +9,7 @@ ADDON_ICON = ADDON.getAddonInfo('icon')
 ADDON_NAME = ADDON.getAddonInfo('name')
 ADDON_PATH = ADDON.getAddonInfo('path').decode("utf-8")
 HOME_XML = "script-Main.xml"
+ACCOUNT_XML = "script-Account.xml"
 SCHEDULE_DETAIL_XML = "script-ScheduleDetail.xml"
 MATCH_SCHEDULE_XML = "script-MatchSchedule.xml"
 MATCH_SCHEDULE_TIME_XML = "script-MatchScheduleTime.xml"
@@ -42,6 +43,16 @@ class WindowManager(object):
         import MainWindow
         xbmc.executebuiltin("ActivateWindow(busydialog)")
         dialog = MainWindow.MainWin(HOME_XML, ADDON_PATH)
+        xbmc.executebuiltin("Dialog.Close(busydialog)")
+        self.open_dialog(dialog, prev_window)
+
+    def open_account_window(self, prev_window=None):
+        """
+        open account window, deal with window stack
+        """
+        import AccountWindow
+        xbmc.executebuiltin("ActivateWindow(busydialog)")
+        dialog = AccountWindow.AccountWin(ACCOUNT_XML, ADDON_PATH)
         xbmc.executebuiltin("Dialog.Close(busydialog)")
         self.open_dialog(dialog, prev_window)
 

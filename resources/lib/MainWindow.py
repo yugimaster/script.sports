@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import xbmc
 import xbmcgui
 import time
 from BaseClasses import *
@@ -20,6 +21,7 @@ C_LIST_RELATE = 9005
 C_LIST_MATCH = 9006
 C_LIST_DATE = 9007
 C_LIST_SCHEDULE = 9008
+C_BUTTON_LOGIN = 100
 
 
 class MainWin(WindowXML, DialogBaseInfo):
@@ -345,6 +347,10 @@ class MainWin(WindowXML, DialogBaseInfo):
         cid = item.getProperty("cid")
         if cid == "more":
             wm.open_match_schedule_time_window()
+
+    @ch.click(C_BUTTON_LOGIN)
+    def open_account_window(self):
+        wm.open_account_window()
 
     @ch.action("back", "*")
     @ch.action("previousmenu", "*")
