@@ -104,6 +104,8 @@
                 <animation effect="fade" time="300">Hidden</animation>
             </control>
             <control type="group">
+                <left>-41</left>
+                <top>-30</top>
                 <visible>!Stringcompare(Window.Property(ScheduleTips),1)</visible>
                 <control type="list" id="302">
                     <width>1500</width>
@@ -115,150 +117,15 @@
                     <pagecontrol>noop</pagecontrol>
                     <scrolltime tween="sine">300</scrolltime>
                     <orientation>vertical</orientation>
-                    <itemlayout width="1317" height="102">
-                        <control type="image">
-                            <width>1317</width>
-                            <height>90</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture>match_time/item_nf.png</texture>
-                        </control>
-                        <control type="image">
-                            <width>126</width>
-                            <height>90</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture>match_time/icon_blue.png</texture>
-                            <visible>Stringcompare(ListItem.Property(MatchState),0)</visible>
-                        </control>
-                        <control type="image">
-                            <width>126</width>
-                            <height>90</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture>match_time/icon_grey.png</texture>
-                            <visible>Stringcompare(ListItem.Property(MatchState),2)</visible>
-                        </control>
-                        <control type="image">
-                            <width>126</width>
-                            <height>90</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture>match_time/icon_red.png</texture>
-                            <visible>Stringcompare(ListItem.Property(MatchState),1)</visible>
-                        </control>
-                        <control type="label">
-                            <left>63</left>
-                            <width>126</width>
-                            <height>90</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font_sport28</font>
-                            <label>$INFO[ListItem.Property(MatchTime)]</label>
-                        </control>
-                        <control type="label">
-                            <left>261</left>
-                            <width>270</width>
-                            <height>90</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font_sport28</font>
-                            <label>$INFO[ListItem.Property(MatchDesc)]</label>
-                        </control>
-                        <control type="image">
-                            <left>396</left>
-                            <top>8</top>
-                            <width>4</width>
-                            <height>74</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture>match_time/line.png</texture>
-                        </control>
+                    <itemlayout width="1399" height="102">
                         <control type="group">
-                            <left>415</left>
-                            <visible>Stringcompare(ListItem.Property(MatchType),1)</visible>
-                            <control type="image">
-                                <top>9</top>
-                                <width>106</width>
-                                <height>72</height>
-                                <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-                                <texture>$INFO[ListItem.Property(LeftBadgeLogo)]</texture>
-                            </control>
-                            <control type="label">
-                                <left>106</left>
-                                <width>226</width>
-                                <height>90</height>
-                                <aligny>center</aligny>
-                                <font>font_sport28</font>
-                                <label>$INFO[ListItem.Property(LeftName)]</label>
-                            </control>
-                            <control type="label">
-                                <left>318</left>
-                                <width>60</width>
-                                <height>90</height>
-                                <align>center</align>
-                                <aligny>center</aligny>
-                                <font>font_sport28</font>
-                                <label>$INFO[ListItem.Property(MatchGoal)]</label>
-                            </control>
-                            <control type="label">
-                                <left>548</left>
-                                <width>226</width>
-                                <height>90</height>
-                                <align>right</align>
-                                <aligny>center</aligny>
-                                <font>font_sport28</font>
-                                <label>$INFO[ListItem.Property(RightName)]</label>
-                            </control>
-                            <control type="image">
-                                <left>548</left>
-                                <top>9</top>
-                                <width>106</width>
-                                <height>72</height>
-                                <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-                                <texture>$INFO[ListItem.Property(RightBadgeLogo)]</texture>
-                            </control>
-                        </control>
-                        <control type="image">
-                            <left>1084</left>
-                            <top>8</top>
-                            <width>4</width>
-                            <height>74</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture>match_time/line.png</texture>
-                        </control>
-                        <control type="label">
-                            <left>1202</left>
-                            <width>229</width>
-                            <height>90</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font_sport28</font>
-                            <label>$INFO[ListItem.Property(LiveState)]</label>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="1317" height="102">
-                        <control type="group">
-                            <animation type="Focus" reversible="false">
-                                <effect type="zoom" start="100" end="113" center="auto" easing="out" tween="cubic" time="300" />
-                            </animation>
-                            <animation type="UnFocus" reversible="false">
-                                <effect type="zoom" start="113" end="100" center="auto" easing="out" tween="cubic" time="300" />
-                            </animation>
+                            <left>41</left>
+                            <top>30</top>
                             <control type="image">
                                 <width>1317</width>
                                 <height>90</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture>match_time/item_nf.png</texture>
-                                <visible>!Control.HasFocus(302)</visible>
-                            </control>
-                            <control type="image">
-                                <width>1317</width>
-                                <height>90</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture>match_time/item_nf.png</texture>
-                                <visible>Control.HasFocus(302)</visible>
-                                <animation type="Focus" reversible="false">
-                                    <effect type="fade" start="100" end="0" time="300" />
-                                </animation>
-                                <animation type="UnFocus" reversible="false">
-                                    <effect type="fade" start="0" end="100" time="300" />
-                                </animation>
                             </control>
                             <control type="image">
                                 <width>126</width>
@@ -308,50 +175,50 @@
                                 <texture>match_time/line.png</texture>
                             </control>
                             <control type="group">
-                            <left>415</left>
-                            <visible>Stringcompare(ListItem.Property(MatchType),1)</visible>
-                            <control type="image">
-                                <top>9</top>
-                                <width>106</width>
-                                <height>72</height>
-                                <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-                                <texture>$INFO[ListItem.Property(LeftBadgeLogo)]</texture>
+                                <left>415</left>
+                                <visible>Stringcompare(ListItem.Property(MatchType),1)</visible>
+                                <control type="image">
+                                    <top>9</top>
+                                    <width>106</width>
+                                    <height>72</height>
+                                    <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+                                    <texture>$INFO[ListItem.Property(LeftBadgeLogo)]</texture>
+                                </control>
+                                <control type="label">
+                                    <left>106</left>
+                                    <width>226</width>
+                                    <height>90</height>
+                                    <aligny>center</aligny>
+                                    <font>font_sport28</font>
+                                    <label>$INFO[ListItem.Property(LeftName)]</label>
+                                </control>
+                                <control type="label">
+                                    <left>318</left>
+                                    <width>60</width>
+                                    <height>90</height>
+                                    <align>center</align>
+                                    <aligny>center</aligny>
+                                    <font>font_sport28</font>
+                                    <label>$INFO[ListItem.Property(MatchGoal)]</label>
+                                </control>
+                                <control type="label">
+                                    <left>548</left>
+                                    <width>226</width>
+                                    <height>90</height>
+                                    <align>right</align>
+                                    <aligny>center</aligny>
+                                    <font>font_sport28</font>
+                                    <label>$INFO[ListItem.Property(RightName)]</label>
+                                </control>
+                                <control type="image">
+                                    <left>548</left>
+                                    <top>9</top>
+                                    <width>106</width>
+                                    <height>72</height>
+                                    <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+                                    <texture>$INFO[ListItem.Property(RightBadgeLogo)]</texture>
+                                </control>
                             </control>
-                            <control type="label">
-                                <left>106</left>
-                                <width>226</width>
-                                <height>90</height>
-                                <aligny>center</aligny>
-                                <font>font_sport28</font>
-                                <label>$INFO[ListItem.Property(LeftName)]</label>
-                            </control>
-                            <control type="label">
-                                <left>318</left>
-                                <width>60</width>
-                                <height>90</height>
-                                <align>center</align>
-                                <aligny>center</aligny>
-                                <font>font_sport28</font>
-                                <label>$INFO[ListItem.Property(MatchGoal)]</label>
-                            </control>
-                            <control type="label">
-                                <left>548</left>
-                                <width>226</width>
-                                <height>90</height>
-                                <align>right</align>
-                                <aligny>center</aligny>
-                                <font>font_sport28</font>
-                                <label>$INFO[ListItem.Property(RightName)]</label>
-                            </control>
-                            <control type="image">
-                                <left>548</left>
-                                <top>9</top>
-                                <width>106</width>
-                                <height>72</height>
-                                <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-                                <texture>$INFO[ListItem.Property(RightBadgeLogo)]</texture>
-                            </control>
-                        </control>
                             <control type="image">
                                 <left>1084</left>
                                 <top>8</top>
@@ -368,6 +235,161 @@
                                 <aligny>center</aligny>
                                 <font>font_sport28</font>
                                 <label>$INFO[ListItem.Property(LiveState)]</label>
+                            </control>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="1399" height="102">
+                        <control type="group">
+                            <animation type="Focus" reversible="false">
+                                <effect type="zoom" start="100" end="113" center="auto" easing="out" tween="cubic" time="300" />
+                            </animation>
+                            <animation type="UnFocus" reversible="false">
+                                <effect type="zoom" start="113" end="100" center="auto" easing="out" tween="cubic" time="300" />
+                            </animation>
+                            <control type="image">
+                                <width>1399</width>
+                                <height>156</height>
+                                <texture>match_time/item_fo.png</texture>
+                                <visible>Control.HasFocus(302)</visible>
+                                <animation type="Focus" reversible="false">
+                                    <effect type="fade" start="0" end="100" time="300" />
+                                </animation>
+                                <animation type="UnFocus" reversible="false">
+                                    <effect type="fade" start="100" end="0" time="300" />
+                                </animation>
+                            </control>
+                            <control type="group">
+                                <left>41</left>
+                                <top>30</top>
+                                <control type="image">
+                                    <width>1317</width>
+                                    <height>90</height>
+                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <texture>match_time/item_nf.png</texture>
+                                    <visible>!Control.HasFocus(302)</visible>
+                                </control>
+                                <control type="image">
+                                    <width>1317</width>
+                                    <height>90</height>
+                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <texture>match_time/item_nf.png</texture>
+                                    <visible>Control.HasFocus(302)</visible>
+                                    <animation type="Focus" reversible="false">
+                                        <effect type="fade" start="100" end="0" time="300" />
+                                    </animation>
+                                    <animation type="UnFocus" reversible="false">
+                                        <effect type="fade" start="0" end="100" time="300" />
+                                    </animation>
+                                </control>
+                                <control type="image">
+                                    <width>126</width>
+                                    <height>90</height>
+                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <texture>match_time/icon_blue.png</texture>
+                                    <visible>Stringcompare(ListItem.Property(MatchState),0)</visible>
+                                </control>
+                                <control type="image">
+                                    <width>126</width>
+                                    <height>90</height>
+                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <texture>match_time/icon_grey.png</texture>
+                                    <visible>Stringcompare(ListItem.Property(MatchState),2)</visible>
+                                </control>
+                                <control type="image">
+                                    <width>126</width>
+                                    <height>90</height>
+                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <texture>match_time/icon_red.png</texture>
+                                    <visible>Stringcompare(ListItem.Property(MatchState),1)</visible>
+                                </control>
+                                <control type="label">
+                                    <left>63</left>
+                                    <width>126</width>
+                                    <height>90</height>
+                                    <align>center</align>
+                                    <aligny>center</aligny>
+                                    <font>font_sport28</font>
+                                    <label>$INFO[ListItem.Property(MatchTime)]</label>
+                                </control>
+                                <control type="label">
+                                    <left>261</left>
+                                    <width>270</width>
+                                    <height>90</height>
+                                    <align>center</align>
+                                    <aligny>center</aligny>
+                                    <font>font_sport28</font>
+                                    <label>$INFO[ListItem.Property(MatchDesc)]</label>
+                                </control>
+                                <control type="image">
+                                    <left>396</left>
+                                    <top>8</top>
+                                    <width>4</width>
+                                    <height>74</height>
+                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <texture>match_time/line.png</texture>
+                                </control>
+                                <control type="group">
+                                    <left>415</left>
+                                    <visible>Stringcompare(ListItem.Property(MatchType),1)</visible>
+                                    <control type="image">
+                                        <top>9</top>
+                                        <width>106</width>
+                                        <height>72</height>
+                                        <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+                                        <texture>$INFO[ListItem.Property(LeftBadgeLogo)]</texture>
+                                    </control>
+                                    <control type="label">
+                                        <left>106</left>
+                                        <width>226</width>
+                                        <height>90</height>
+                                        <aligny>center</aligny>
+                                        <font>font_sport28</font>
+                                        <label>$INFO[ListItem.Property(LeftName)]</label>
+                                    </control>
+                                    <control type="label">
+                                        <left>318</left>
+                                        <width>60</width>
+                                        <height>90</height>
+                                        <align>center</align>
+                                        <aligny>center</aligny>
+                                        <font>font_sport28</font>
+                                        <label>$INFO[ListItem.Property(MatchGoal)]</label>
+                                    </control>
+                                    <control type="label">
+                                        <left>548</left>
+                                        <width>226</width>
+                                        <height>90</height>
+                                        <align>right</align>
+                                        <aligny>center</aligny>
+                                        <font>font_sport28</font>
+                                        <label>$INFO[ListItem.Property(RightName)]</label>
+                                    </control>
+                                    <control type="image">
+                                        <left>548</left>
+                                        <top>9</top>
+                                        <width>106</width>
+                                        <height>72</height>
+                                        <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+                                        <texture>$INFO[ListItem.Property(RightBadgeLogo)]</texture>
+                                    </control>
+                                </control>
+                                <control type="image">
+                                    <left>1084</left>
+                                    <top>8</top>
+                                    <width>4</width>
+                                    <height>74</height>
+                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <texture>match_time/line.png</texture>
+                                </control>
+                                <control type="label">
+                                    <left>1202</left>
+                                    <width>229</width>
+                                    <height>90</height>
+                                    <align>center</align>
+                                    <aligny>center</aligny>
+                                    <font>font_sport28</font>
+                                    <label>$INFO[ListItem.Property(LiveState)]</label>
+                                </control>
                             </control>
                         </control>
                     </focusedlayout>
