@@ -10,6 +10,8 @@ from Utils import *
 ch = OnClickHandler()
 LIBRARY = LibraryFunctions()
 C_LIST_FILTER = 401
+C_BUTTON_LOGIN = 412
+C_BUTTON_LOGOUT = 414
 
 
 class AccountWin(WindowXML, DialogBaseInfo):
@@ -41,6 +43,16 @@ class AccountWin(WindowXML, DialogBaseInfo):
         listitem = {"label": u"预约",
                     "name": "order"}
         yield listitem
+
+    @ch.click(C_BUTTON_LOGIN)
+    def account_login(self):
+        self.window.setProperty("IsLogin", "1")
+        self.setFocusId(C_LIST_FILTER)
+
+    @ch.click(C_BUTTON_LOGOUT)
+    def account_logout(self):
+        self.window.clearProperty("IsLogin")
+        self.setFocusId(C_LIST_FILTER)
 
     @ch.action("back", "*")
     @ch.action("previousmenu", "*")
